@@ -9,12 +9,19 @@ import kotlinx.coroutines.launch
 
 class Coroutine {
     companion object {
-        fun BackgroundTask(binding : FragmentOneBinding, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
+        fun BackgroundTask(where: Int, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
             CoroutineScope(Dispatchers.Main).launch {
                 async(Dispatchers.Default){
-                    notice.addAll(JsoupCrawler().boardCrawling(5))
+                    notice.addAll(JsoupCrawler().boardCrawling(where))
                 }.await()
                 adapter.notifyDataSetChanged()
+            }
+        }
+        fun notificationTask(where: Int) {
+            CoroutineScope(Dispatchers.Main).launch {
+                async(Dispatchers.Default){
+                    JsoupCrawler().boardCrawling(where)
+                }.await()
             }
         }
     }

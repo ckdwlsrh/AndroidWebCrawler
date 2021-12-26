@@ -22,7 +22,7 @@ class OneFragment : Fragment() {
         var notice = mutableListOf<NoticeListForm>()
         val adapter = ContactsListAdapter(notice)
         binding.mRecyclerView.adapter = adapter
-        Coroutine.BackgroundTask(binding, adapter, notice)
+        Coroutine.BackgroundTask(1, adapter, notice)
         return binding.root
     }
 }

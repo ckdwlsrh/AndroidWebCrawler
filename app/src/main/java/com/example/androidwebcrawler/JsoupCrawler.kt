@@ -62,6 +62,7 @@ class JsoupCrawler() {
         return data_list
     }
     fun postCrawling() {
+        //페이지 데이터 리스팅
 
     }
 /*
