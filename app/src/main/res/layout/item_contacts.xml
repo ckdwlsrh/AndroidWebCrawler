@@ -7,7 +7,7 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/mNume"
+        android:id="@+id/mNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -26,9 +26,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/mDate_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
