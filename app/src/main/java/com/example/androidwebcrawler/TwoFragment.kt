@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.androidwebcrawler.databinding.FragmentOneBinding
+import com.example.mylistapplication.ContactsListAdapter
 
 class TwoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        return inflater.inflate(R.layout.fragment_two, container, false)
+        val binding = FragmentOneBinding.inflate(inflater)
+        var notice = mutableListOf<NoticeListForm>()
+        val adapter = ContactsListAdapter(notice)
+        binding.mRecyclerView.adapter = adapter
+        Coroutine.BackgroundTask(2, adapter, notice)
+        return binding.root
     }
 }

@@ -1,5 +1,7 @@
 package com.example.mylistapplication
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidwebcrawler.NoticeListForm
@@ -10,10 +12,17 @@ class ContactsViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     var view : View = v
 
     fun bind(item: NoticeListForm) {
-        view.mNume.text = item.num
+        if(item.num == "공지") {
+            view.mNum.setTextColor(Color.RED)
+            view.mNum.setTypeface(null, Typeface.BOLD)
+        }
+        else{
+            view.mNum.setTextColor(Color.BLACK)
+            view.mNum.setTypeface(null, Typeface.NORMAL)
+        }
+        view.mNum.text = item.num
         view.mTitle.text = item.title
         view.mName.text = item.name
         view.mDate.text = item.date
-        view.mDate_id.text = item.data_id
     }
 }
