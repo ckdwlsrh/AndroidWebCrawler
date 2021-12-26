@@ -43,7 +43,7 @@ class JsoupCrawler() {
             while (list_iterator!!.hasNext()) {
                 val temp = list_iterator.next()
                 val num = temp.select("td").first()!!.text()
-                val notice_check = num == "공지"
+                val notice_check = (num == "공지")
 
                 if(notice_check && currPage.toInt() > 1) continue
 
