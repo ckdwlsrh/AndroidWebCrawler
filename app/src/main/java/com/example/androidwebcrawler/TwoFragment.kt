@@ -14,7 +14,7 @@ class TwoFragment : Fragment() {
         var notice = mutableListOf<NoticeListForm>()
         val adapter = ContactsListAdapter(notice)
         binding.mRecyclerView.adapter = adapter
-        Coroutine.BackgroundTask(3, adapter, notice)
+        Coroutine.BackgroundTask(2, adapter, notice)
         return binding.root
     }
 }

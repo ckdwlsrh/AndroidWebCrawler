@@ -43,5 +43,15 @@ class MainActivity : AppCompatActivity()  {
                 .replace(R.id.view, ThreeFragment())
                 .commit()
         }
+        binding.btn4.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.view, FourFragment())
+                .commit()
+        }
+        binding.btn5.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.view, FiveFragment())
+                .commit()
+        }
     }
 }
