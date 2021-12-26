@@ -8,10 +8,10 @@ import kotlinx.coroutines.launch
 
 class Coroutine {
     companion object {
-        fun coroutineCoveredCrawling(where: Int, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
+        fun coroutineCoveredCrawling(currPage: String,where: Int, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
             CoroutineScope(Dispatchers.Main).launch {
                 async(Dispatchers.Default){
-                    notice.addAll(JsoupCrawler().boardCrawling(where))
+                    notice.addAll(JsoupCrawler().boardCrawling(currPage, where))
                 }.await()
                 adapter.notifyDataSetChanged()
             }
