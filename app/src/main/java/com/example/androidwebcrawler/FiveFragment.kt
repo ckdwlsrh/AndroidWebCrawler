@@ -12,7 +12,7 @@ class FiveFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentOneBinding.inflate(inflater)
         var notice = mutableListOf<NoticeListForm>()
-        val adapter = ContactsListAdapter(notice)
+        val adapter = ContactsListAdapter( requireActivity(),notice)
         binding.mRecyclerView.adapter = adapter
         Coroutine.BackgroundTask(5, adapter, notice)
         return binding.root

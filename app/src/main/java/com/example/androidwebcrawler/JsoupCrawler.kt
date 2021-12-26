@@ -9,6 +9,11 @@ class JsoupCrawler() {
     val WAGGLE_NOTICE_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectMainAtNttList.do?mi=14003&currPage=" //와글 공지
     val CE_URL = "https://www.changwon.ac.kr/ce/na/ntt/selectNttList.do?" //컴퓨터공학과 기본 url
     val IE_URL = "https://www.changwon.ac.kr/it/na/ntt/selectNttList.do?" //정보통신공학과 기본 url
+    val WAGGLE_POST_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectMainAtNttInfo.do?mi=14003&currPage="
+    val CE_POST_URL = "https://www.changwon.ac.kr/ce/na/ntt/selectNttInfo.do?"
+    val IE_POST_URL = "https://www.changwon.ac.kr/it/na/ntt/selectNttInfo.do?"
+
+
     //val LOGIN_PAGE_URL = "https://www.changwon.ac.kr/portal/main.do"
     //val LOGIN_ACTION_PAGE_URL = "https://www.changwon.ac.kr/portal/lo/login/ssoLogin.do"
     //val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -53,7 +58,7 @@ class JsoupCrawler() {
                 val data_id = temp.select("a[class=nttInfoBtn]").attr("data-id")
 //                println(num+": "+title+"\n"+name+","+date+","+data_id)
 
-                data_list.add(NoticeListForm(num,title,name,date,data_id,notice_check))
+                data_list.add(NoticeListForm(num,title,name,date,data_id,notice_check,where))
             }
 
         }catch (e: Exception) {
@@ -65,11 +70,11 @@ class JsoupCrawler() {
         try {
             var url = ""
             when(where) { //where을 통해 보드 선택
-                1 -> url = CE_URL + "mi=6627&nttSn=" +  data_id// 컴공 공지
-                2 -> url = CE_URL + "mi=6634&nttSn=" + data_id // 컴공 자유 게시판
-                3 -> url = IE_URL + "mi=6661&nttSn=" + data_id // 정통 공지
-                4 -> url = IE_URL + "mi=6665&nttSn=" + data_id // 정통 수업 게시판
-                5 -> url = WAGGLE_NOTICE_URL + "&nttSn=" + data_id //와글 공지
+                1 -> url = CE_POST_URL + "mi=6627&nttSn=" +  data_id// 컴공 공지
+                2 -> url = CE_POST_URL + "mi=6634&nttSn=" + data_id // 컴공 자유 게시판
+                3 -> url = IE_POST_URL + "mi=6661&nttSn=" + data_id // 정통 공지
+                4 -> url = IE_POST_URL + "mi=6665&nttSn=" + data_id // 정통 수업 게시판
+                5 -> url = WAGGLE_POST_URL + "&nttSn=" + data_id //와글 공지
                 else -> throw Exception()// where이 값이 정상적이지 않으면 예외처리
             }
 
