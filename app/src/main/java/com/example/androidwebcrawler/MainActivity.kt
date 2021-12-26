@@ -10,9 +10,6 @@ import androidx.core.content.getSystemService
 import com.example.androidwebcrawler.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()  {
-    fun post(where:Int, data_id: String) {
-        PostFragment(where,data_id).show(supportFragmentManager,"post")
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
