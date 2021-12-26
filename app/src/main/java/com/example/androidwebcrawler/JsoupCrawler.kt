@@ -52,7 +52,7 @@ class JsoupCrawler{
                 val name = temp.select("td").eachText().get(2)
                 val date = temp.select("td").eachText().get(3)
                 val data_id = temp.select("a[class=nttInfoBtn]").attr("data-id")
-                println(num+": "+title+"\n"+name+","+date+","+data_id)
+//                println(num+": "+title+"\n"+name+","+date+","+data_id)
 
                 data_list.add(NoticeListForm(num,title,name,date,data_id,notice_check))
             }
@@ -106,7 +106,4 @@ class JsoupCrawler{
             e.printStackTrace()
         }
     }*/
-}
-fun main() {
-    JsoupCrawler().boardCrawling(5)
 }

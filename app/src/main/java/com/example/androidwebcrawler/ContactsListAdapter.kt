@@ -3,9 +3,10 @@ package com.example.mylistapplication
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.androidwebcrawler.NoticeListForm
 import com.example.androidwebcrawler.R
 
-class ContactsListAdapter(val itemList : List<Contacts>) :
+class ContactsListAdapter(val itemList : List<NoticeListForm>) :
     RecyclerView.Adapter<ContactsViewHolder>(){
 
     override fun getItemCount(): Int {
