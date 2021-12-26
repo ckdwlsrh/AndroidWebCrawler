@@ -6,7 +6,7 @@ import org.jsoup.Jsoup
 // 공지사항 목록 데이터 구조
 data class NoticeListForm(val num: String, val title: String, val name: String, val date: String,val data_id: String,val notice_check: Boolean)
 
-class JsoupCrawler {
+class JsoupCrawler{
     val WAGGLE_NOTICE_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectMainAtNttList.do?mi=14003&currPage=" //와글 공지
     val CE_URL = "https://www.changwon.ac.kr/ce/na/ntt/selectNttList.do?" //컴퓨터공학과 기본 url
     val IE_URL = "https://www.changwon.ac.kr/it/na/ntt/selectNttList.do?" //정보통신공학과 기본 url

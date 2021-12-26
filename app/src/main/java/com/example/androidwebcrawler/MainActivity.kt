@@ -1,6 +1,7 @@
 
 package com.example.androidwebcrawler
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidwebcrawler.databinding.ActivityMainBinding
@@ -12,6 +13,8 @@ class MainActivity : AppCompatActivity()  {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         binding.btn1.setOnClickListener {
             supportFragmentManager.beginTransaction()
