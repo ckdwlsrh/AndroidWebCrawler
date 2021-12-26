@@ -1,9 +1,13 @@
 
 package com.example.androidwebcrawler
 
+import android.app.job.JobInfo
+import android.app.job.JobScheduler
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import com.example.androidwebcrawler.databinding.ActivityMainBinding
 import com.example.mylistapplication.ContactsListAdapter
 
@@ -13,6 +17,13 @@ class MainActivity : AppCompatActivity()  {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//잡스케줄러
+        var jobScheduler : JobScheduler? = getSystemService<JobScheduler>()
+        var builder = JobInfo.Builder(1, ComponentName(this, NotificationService::class.java))
+            .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+            .setPeriodic(1200000)
+            .setPersisted(true)
+        jobScheduler!!.schedule(builder.build())
 
 
 
