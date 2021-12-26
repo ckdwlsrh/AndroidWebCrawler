@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity()  {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.view, FiveFragment())
+            .commit()
 //잡스케줄러
 
         var jobScheduler : JobScheduler? = getSystemService<JobScheduler>()

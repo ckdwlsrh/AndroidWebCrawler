@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(컴공)\n 공지"
-            android:textSize="5pt"
+            android:textSize="6pt"
 
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"/>
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(컴공)\n 자유"
-            android:textSize="5pt"
+            android:textSize="6pt"
 
             android:layout_marginRight="10dp"/>
         <Button
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(정통)\n 공지"
-            android:textSize="5pt"
+            android:textSize="6pt"
 
             android:layout_marginRight="10dp"/>
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(정통)\n 자유"
-            android:textSize="5pt"
+            android:textSize="6pt"
 
             android:layout_marginRight="10dp"/>
 
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="와글"
-            android:textSize="5pt"
+            android:textSize="6pt"
 
             android:layout_marginRight="10dp"/>
     </LinearLayout>

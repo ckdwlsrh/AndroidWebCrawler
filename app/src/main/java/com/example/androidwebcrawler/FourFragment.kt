@@ -15,6 +15,7 @@ class FourFragment : Fragment() {
         val adapter = ContactsListAdapter( requireActivity(),notice)
         binding.mRecyclerView.adapter = adapter
         Coroutine.BackgroundTask(4, adapter, notice)
+        binding.mRecyclerView.addItemDecoration(Decoration())
         return binding.root
     }
 }
