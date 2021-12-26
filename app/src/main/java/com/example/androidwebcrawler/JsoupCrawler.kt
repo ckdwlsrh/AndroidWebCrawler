@@ -61,8 +61,34 @@ class JsoupCrawler() {
         }
         return data_list
     }
-    fun postCrawling() {
-        //페이지 데이터 리스팅
+    fun postCrawling(where: Int, data_id: String) : String {
+        try {
+            var url = ""
+            when(where) { //where을 통해 보드 선택
+                1 -> url = CE_URL + "mi=6627&nttSn=" +  data_id// 컴공 공지
+                2 -> url = CE_URL + "mi=6634&nttSn=" + data_id // 컴공 자유 게시판
+                3 -> url = IE_URL + "mi=6661&nttSn=" + data_id // 정통 공지
+                4 -> url = IE_URL + "mi=6665&nttSn=" + data_id // 정통 수업 게시판
+                5 -> url = WAGGLE_NOTICE_URL + "&nttSn=" + data_id //와글 공지
+                else -> throw Exception()// where이 값이 정상적이지 않으면 예외처리
+            }
+
+            val page = Jsoup.connect(url)
+                .method(Connection.Method.GET)
+                .execute().parse()
+
+            val el_board = page.getElementById("sub_content")
+            val page_list = el_board
+                ?.select("div[class=BD_table]")
+                ?.select("table")
+                ?.select("tbody")
+
+            return page_list!!.html()
+
+        }catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return "error"
 
     }
 /*
