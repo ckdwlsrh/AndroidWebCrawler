@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class Coroutine {
     companion object {
-        fun BackgroundTask(where: Int, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
+        fun coroutineCoveredCrawling(where: Int, adapter : ContactsListAdapter, notice : MutableList<NoticeListForm>){
             CoroutineScope(Dispatchers.Main).launch {
                 async(Dispatchers.Default){
                     notice.addAll(JsoupCrawler().boardCrawling(where))
