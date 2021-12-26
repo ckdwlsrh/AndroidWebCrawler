@@ -15,6 +15,7 @@ class TwoFragment : Fragment() {
         val adapter = ContactsListAdapter(notice)
         binding.mRecyclerView.adapter = adapter
         Coroutine.BackgroundTask(2, adapter, notice)
+        binding.mRecyclerView.addItemDecoration(Decoration())
         return binding.root
     }
 }

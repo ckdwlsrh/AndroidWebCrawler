@@ -17,7 +17,7 @@ class ContactsViewHolder(v: View) : RecyclerView.ViewHolder(v) {
             view.mNum.setTypeface(null, Typeface.BOLD)
         }
         else{
-            view.mNum.setTextColor(Color.BLACK)
+            view.mNum.setTextColor(Color.GRAY)
             view.mNum.setTypeface(null, Typeface.NORMAL)
         }
         view.mNum.text = item.num
