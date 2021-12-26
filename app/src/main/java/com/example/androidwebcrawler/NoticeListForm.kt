@@ -5,5 +5,6 @@ data class NoticeListForm(val num: String,
                           val name: String,
                           val date: String,
                           val data_id: String,
-                          val notice_check: Boolean)
+                          val notice_check: Boolean,
+                          val where: Int)
 

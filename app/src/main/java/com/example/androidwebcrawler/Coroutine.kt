@@ -17,13 +17,5 @@ class Coroutine {
                 adapter.notifyDataSetChanged()
             }
         }
-        fun PostTask(where: Int, data_id: String) {
-            CoroutineScope(Dispatchers.Main).launch {
-                val str = async(Dispatchers.Default){
-                    JsoupCrawler().postCrawling(where, data_id)
-                }.await()
-            }
-
-        }
     }
 }
