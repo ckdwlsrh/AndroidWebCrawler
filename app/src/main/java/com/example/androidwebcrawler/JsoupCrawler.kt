@@ -9,7 +9,7 @@ class JsoupCrawler() {
     val WAGGLE_NOTICE_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectMainAtNttList.do?mi=14003&currPage=" //와글 공지
     val CE_URL = "https://www.changwon.ac.kr/ce/na/ntt/selectNttList.do?" //컴퓨터공학과 기본 url
     val IE_URL = "https://www.changwon.ac.kr/it/na/ntt/selectNttList.do?" //정보통신공학과 기본 url
-    val WAGGLE_POST_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectMainAtNttInfo.do?mi=14003&currPage="
+    val WAGGLE_POST_URL = "https://www.changwon.ac.kr/portal/na/ntt/selectNttMainAtInfo.do?mi=14003"
     val CE_POST_URL = "https://www.changwon.ac.kr/ce/na/ntt/selectNttInfo.do?"
     val IE_POST_URL = "https://www.changwon.ac.kr/it/na/ntt/selectNttInfo.do?"
 

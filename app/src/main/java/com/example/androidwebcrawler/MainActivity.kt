@@ -4,12 +4,10 @@ package com.example.androidwebcrawler
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
 import android.content.ComponentName
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.getSystemService
 import com.example.androidwebcrawler.databinding.ActivityMainBinding
-import com.example.mylistapplication.ContactsListAdapter
 
 class MainActivity : AppCompatActivity()  {
     fun post(where:Int, data_id: String) {
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity()  {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.view, FiveFragment())
+            .replace(R.id.view, PageFragment(5))
             .commit()
 //잡스케줄러
 
@@ -36,27 +34,27 @@ class MainActivity : AppCompatActivity()  {
 
         binding.btn1.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view, OneFragment())
+                .replace(R.id.view, PageFragment(1))
                 .commit()
         }
         binding.btn2.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view, TwoFragment())
+                .replace(R.id.view, PageFragment(2))
                 .commit()
         }
         binding.btn3.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view, ThreeFragment())
+                .replace(R.id.view, PageFragment(3))
                 .commit()
         }
         binding.btn4.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view, FourFragment())
+                .replace(R.id.view, PageFragment(4))
                 .commit()
         }
         binding.btn5.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.view, FiveFragment())
+                .replace(R.id.view, PageFragment(5))
                 .commit()
         }
     }

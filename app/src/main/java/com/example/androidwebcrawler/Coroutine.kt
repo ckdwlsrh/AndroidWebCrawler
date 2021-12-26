@@ -1,6 +1,5 @@
 package com.example.androidwebcrawler
 
-import com.example.androidwebcrawler.databinding.FragmentOneBinding
 import com.example.mylistapplication.ContactsListAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
