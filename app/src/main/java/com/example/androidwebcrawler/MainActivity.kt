@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity()  {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 //잡스케줄러
+
         var jobScheduler : JobScheduler? = getSystemService<JobScheduler>()
         var builder = JobInfo.Builder(1, ComponentName(this, NotificationService::class.java))
             .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)

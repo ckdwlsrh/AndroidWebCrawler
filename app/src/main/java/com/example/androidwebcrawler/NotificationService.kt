@@ -2,6 +2,7 @@ package com.example.androidwebcrawler
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
 import android.app.job.JobParameters
 import android.app.job.JobService
@@ -13,6 +14,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 class NotificationService : JobService() {
     companion object {
@@ -22,18 +27,30 @@ class NotificationService : JobService() {
 
     override fun onCreate() {
         super.onCreate()
-        num.add(JsoupCrawler().boardCrawling(1).get(0))
-        num.add(JsoupCrawler().boardCrawling(2).get(0))
-        num.add(JsoupCrawler().boardCrawling(3).get(0))
-        num.add(JsoupCrawler().boardCrawling(4).get(0))
-        num.add(JsoupCrawler().boardCrawling(5).get(0))
+        CoroutineScope(Dispatchers.Main).launch {
+            async(Dispatchers.Default) {
+                num.add(JsoupCrawler().boardCrawling(1).get(0))
+                num.add(JsoupCrawler().boardCrawling(2).get(0))
+                num.add(JsoupCrawler().boardCrawling(3).get(0))
+                num.add(JsoupCrawler().boardCrawling(4).get(0))
+                num.add(JsoupCrawler().boardCrawling(5).get(0))
+            }.await()
+        }
     }
     override fun onStartJob(params: JobParameters?): Boolean {
+        val temp = mutableListOf<NoticeListForm>()
+
+        CoroutineScope(Dispatchers.Main).launch {
+            async(Dispatchers.Default) {
+                for(i in 1..5) {
+                    temp.add(JsoupCrawler().boardCrawling(i).get(0))
+                }
+            }.await()
+        }
+
         Thread(Runnable {
-            // 공지사항들 비교
             for(i in 1..5) {
-                val temp = JsoupCrawler().boardCrawling(i).get(0)
-                if(!num.get(i-1).equals(temp)) {
+                if(!num.get(i-1).equals(temp.get(i-1))) {
                     //알림
                     val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
                     val builder: NotificationCompat.Builder
@@ -74,14 +91,17 @@ class NotificationService : JobService() {
                         5 -> str = "[와글 홈페이지] 공지사항"
                     }
                     builder.setContentTitle(str)
-                    builder.setContentText(temp.title)
+                    builder.setContentText(temp.get(i-1).title)
 
+                    val intent = Intent(this,MainActivity::class.java)
+                    val pendingIntent = PendingIntent.getActivity(this,10,intent,PendingIntent.FLAG_UPDATE_CURRENT)
+                    builder.setContentIntent(pendingIntent)
                     manager.notify(11,builder.build())
                 }
             }
             //
             jobFinished(params, true)
-        }).start()
+        })
         return true
     }
 
