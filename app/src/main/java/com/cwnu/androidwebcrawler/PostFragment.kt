@@ -1,4 +1,4 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.whenResumed
-import com.example.androidwebcrawler.databinding.FragmentPostBinding
+import com.cwnu.androidwebcrawler.databinding.FragmentPostBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

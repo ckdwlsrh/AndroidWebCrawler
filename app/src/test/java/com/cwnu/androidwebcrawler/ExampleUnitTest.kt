@@ -1,4 +1,4 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 import org.junit.Test
 

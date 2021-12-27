@@ -1,5 +1,3 @@
-package com.example.mylistapplication
-
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
@@ -7,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidwebcrawler.MainActivity
-import com.example.androidwebcrawler.NoticeListForm
-import com.example.androidwebcrawler.PostFragment
-import com.example.androidwebcrawler.R
+import com.cwnu.androidwebcrawler.MainActivity
+import com.cwnu.androidwebcrawler.NoticeListForm
+import com.cwnu.androidwebcrawler.PostFragment
+import com.cwnu.androidwebcrawler.R
 import kotlinx.android.synthetic.main.item_contacts.view.*
 
 class ContactsListAdapter(val context: Context, val itemList : List<NoticeListForm>) :

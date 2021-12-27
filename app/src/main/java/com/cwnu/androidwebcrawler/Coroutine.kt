@@ -1,6 +1,6 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
-import com.example.mylistapplication.ContactsListAdapter
+import ContactsListAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

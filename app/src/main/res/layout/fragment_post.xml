@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="600dp"
-    tools:context=".PostFragment">
+    tools:context="com.cwnu.androidwebcrawler.PostFragment">
 
     <TextView
         android:id="@+id/post"

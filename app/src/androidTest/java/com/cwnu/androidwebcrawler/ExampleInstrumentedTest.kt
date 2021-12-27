@@ -1,4 +1,4 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

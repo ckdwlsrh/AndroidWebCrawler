@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidwebcrawler">
+    package="com.cwnu.androidwebcrawler">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidWebCrawler">
         <activity
-            android:name=".MainActivity"
+            android:name="com.cwnu.androidwebcrawler.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".NotificationService"
+        <service android:name="com.cwnu.androidwebcrawler.NotificationService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />

@@ -1,5 +1,6 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
+import ContactsListAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidwebcrawler.databinding.FragmentPageBinding
-import com.example.mylistapplication.ContactsListAdapter
+import com.cwnu.androidwebcrawler.databinding.FragmentPageBinding
+
 
 class PageFragment(val where: Int) : Fragment() {
 
@@ -18,7 +19,7 @@ class PageFragment(val where: Int) : Fragment() {
         var currPage = 1
         val adapter = ContactsListAdapter( requireActivity(),notice)
         binding.mRecyclerView.adapter = adapter
-        Coroutine.coroutineCoveredCrawling(currPage.toString(),where, adapter, notice)
+        Coroutine.coroutineCoveredCrawling(currPage.toString(), where, adapter, notice)
 
 
         binding.mRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

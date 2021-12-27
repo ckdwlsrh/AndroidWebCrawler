@@ -1,4 +1,4 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 data class NoticeListForm(val num: String,
                           val title: String,

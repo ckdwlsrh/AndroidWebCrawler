@@ -1,4 +1,4 @@
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -93,7 +93,7 @@ class NotificationService : JobService() {
                     builder.setContentTitle(str)
                     builder.setContentText(temp.get(i-1).title)
 
-                    val intent = Intent(this,MainActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     val pendingIntent = PendingIntent.getActivity(this,10,intent,PendingIntent.FLAG_UPDATE_CURRENT)
                     builder.setContentIntent(pendingIntent)
                     manager.notify(11,builder.build())

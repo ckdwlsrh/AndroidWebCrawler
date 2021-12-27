@@ -1,5 +1,5 @@
 
-package com.example.androidwebcrawler
+package com.cwnu.androidwebcrawler
 
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
@@ -7,7 +7,8 @@ import android.content.ComponentName
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.getSystemService
-import com.example.androidwebcrawler.databinding.ActivityMainBinding
+import com.cwnu.androidwebcrawler.R
+import com.cwnu.androidwebcrawler.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
