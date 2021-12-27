@@ -103,6 +103,7 @@ class NotificationService : JobService() {
                     val pendingIntent = PendingIntent.getActivity(this,10,intent,PendingIntent.FLAG_UPDATE_CURRENT)
                     builder.setContentIntent(pendingIntent)
                     manager.notify(11,builder.build())
+                    num.set(i-1,temp.get(i-1))
                 }
             }
             //
