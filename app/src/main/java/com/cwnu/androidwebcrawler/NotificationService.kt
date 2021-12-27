@@ -29,11 +29,13 @@ class NotificationService : JobService() {
         super.onCreate()
         CoroutineScope(Dispatchers.Main).launch {
             async(Dispatchers.Default) {
-                num.add(JsoupCrawler().boardCrawling(1).get(0))
-                num.add(JsoupCrawler().boardCrawling(2).get(0))
-                num.add(JsoupCrawler().boardCrawling(3).get(0))
-                num.add(JsoupCrawler().boardCrawling(4).get(0))
-                num.add(JsoupCrawler().boardCrawling(5).get(0))
+                for(i in 1..5) {
+                    var j = 0
+                    while(JsoupCrawler().boardCrawling(i).get(j).notice_check) {
+                        j++
+                    }
+                    num.add(JsoupCrawler().boardCrawling(i).get(j))
+                }
             }.await()
         }
     }
@@ -43,7 +45,11 @@ class NotificationService : JobService() {
         CoroutineScope(Dispatchers.Main).launch {
             async(Dispatchers.Default) {
                 for(i in 1..5) {
-                    temp.add(JsoupCrawler().boardCrawling(i).get(0))
+                    var j = 0
+                    while(JsoupCrawler().boardCrawling(i).get(j).notice_check) {
+                        j++
+                    }
+                    temp.add(JsoupCrawler().boardCrawling(i).get(j))
                 }
             }.await()
         }
